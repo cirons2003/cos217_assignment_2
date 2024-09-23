@@ -5,8 +5,8 @@
 
 size_t Str_getLength(const char *s) {
     assert(s != NULL);
-    const char *startp = *endp = s;
-    while (endp* != '/0') {
+    const char *endp = s;
+    while (*endp != '/0') {
         endp++;
     }
     return (size_t)(endp - startp);
@@ -14,7 +14,8 @@ size_t Str_getLength(const char *s) {
 
 char *Str_copy(char *s1, const char *s2) {
     assert(s1 != NULL && s2 != NULL);
-    const char *s1p = s1, *s2p = s2;
+    char *s1p = s1;
+    const char *s2p = s2;
     while (*s2p != '\0') {
         *s1p++ = *s2p++;
     }
@@ -24,11 +25,12 @@ char *Str_copy(char *s1, const char *s2) {
 
 char *Str_concat(char * s1, const char *s2) {
     assert(s1 != NULL && s2 != NULL);
-    const char *s1p = s1, *s2p = s2;
-    while (s1p* != '\0') {
+    char *s1p = s1;
+    const char *s2p = s2;
+    while (*s1p != '\0') {
         s1p++;
     }
-    while (s2p* != '\0') {
+    while (*s2p != '\0') {
         *s1p++ = *s2p++;
     }
     *s1p = '\0';
