@@ -9,7 +9,7 @@ size_t Str_getLength(const char *s) {
     while (*endp != '/0') {
         endp++;
     }
-    return (size_t)(endp - startp);
+    return (size_t)(endp - s);
 }
 
 char *Str_copy(char *s1, const char *s2) {
