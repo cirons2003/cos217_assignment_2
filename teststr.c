@@ -214,6 +214,8 @@ static void testCopy(void)
          pcResult = Str_copy(acDest1, acSrc);
          ASSURE(pcResult == acDest1);
          (void)strcpy(acDest2, acSrc);
+         printf("expected: %s\n", acDest2);
+         printf("received: %s\n", pcResult);
          ASSURE(memcmp(acDest1, acDest2, STRESS_STRING_SIZE) == 0);
       }
    }
