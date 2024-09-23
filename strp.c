@@ -1,4 +1,7 @@
-#include "str.h";
+#include "str.h"
+#include <string.h>
+#include <stddef.h>
+#include <assert.h>
 
 size_t Str_getLength(const char *s) {
     assert(s != NULL);
@@ -7,7 +10,7 @@ size_t Str_getLength(const char *s) {
         endp++;
     }
     return (size_t)(endp - startp);
-};
+}
 
 char *Str_copy(char *s1, const char *s2) {
     assert(s1 != NULL && s2 != NULL);
@@ -45,9 +48,8 @@ int Str_compare(const char *s1, const char *s2) {
     } else {
         return 1;
     }
-
 }
 
 char *Str_search(const char *s1, const char *s2) {
     return strstr(s1, s2);
-};
+}

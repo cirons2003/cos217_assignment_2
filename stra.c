@@ -1,5 +1,7 @@
-#include "str.h";
-#include <string.h>;
+#include "str.h"
+#include <string.h>
+#include <stddef.h>
+#include <assert.h>
 
 size_t Str_getLength(const char *s) {
     assert(s != NULL);
@@ -8,9 +10,9 @@ size_t Str_getLength(const char *s) {
         len++;
     }
     return len;
-};
+}
 
-char *Str_copy(char * restrict s1, const char * restrict s2) {
+char *Str_copy(char * s1, const char * s2) {
     assert(s1 != NULL && s2 != NULL);
     int index = 0;
     while (s2[index] != '\0') {
@@ -18,9 +20,9 @@ char *Str_copy(char * restrict s1, const char * restrict s2) {
     }
     s1[index] = '\0';
     return s1; 
-};
+}
 
-char *Str_concat(char * restrict s1, const char * restrict s2) {
+char *Str_concat(char * s1, const char * s2) {
     assert(s1 != NULL && s2 != NULL);
     int index1 = 0, index2 = 0;
     while (s1[index1] != '\0') {
@@ -31,7 +33,7 @@ char *Str_concat(char * restrict s1, const char * restrict s2) {
     }
     s1[index1] = '\0';
     return s1;
-};
+}
 
 int Str_compare(const char * s1, const char *s2) {
     int index = 0; 
@@ -45,8 +47,8 @@ int Str_compare(const char * s1, const char *s2) {
     } else {
         return 1;
     }
-};
+}
 
 char *Str_search(const char *s1, const char *s2) {
     return strstr(s1, s2);
-};
+}
