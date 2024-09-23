@@ -16,7 +16,8 @@ char *Str_copy(char * s1, const char * s2) {
     assert(s1 != NULL && s2 != NULL);
     int index = 0;
     while (s2[index] != '\0') {
-        s1[index] = s2[index++];
+        s1[index] = s2[index];
+        index++;
     }
     s1[index] = '\0';
     return s1; 
