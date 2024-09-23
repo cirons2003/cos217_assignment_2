@@ -6,7 +6,7 @@
 size_t Str_getLength(const char *s) {
     assert(s != NULL);
     const char *endp = s;
-    while (*endp != '/0') {
+    while (*endp != '\0') {
         endp++;
     }
     return (size_t)(endp - s);
