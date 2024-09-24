@@ -3,13 +3,13 @@
 #include <stddef.h>
 #include <assert.h>
 
-size_t Str_getLength(const char pcSrc[])
-{
-   size_t uLength = 0;
-   assert(pcSrc != NULL);
-   while (pcSrc[uLength] != '\0')
-      uLength++;
-   return uLength;
+size_t Str_getLength(const char *s) {
+    assert(s != NULL);
+    size_t currLength = 0;
+    while (s[currLength] != '\0') {
+        currLength++;
+    }
+    return currLength;
 }
 
 char *Str_copy(char * s1, const char * s2) {
