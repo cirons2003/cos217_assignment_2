@@ -5,11 +5,11 @@
 
 size_t Str_getLength(const char *s) {
     assert(s != NULL);
-    size_t uLength = 0;
-    while (s[uLength] != '\0') {
-        uLength++;
+    size_t len = 0;
+    while (s[len] != '\0') {
+        len++;
     }
-    return uLength;
+    return len;
 }
 
 char *Str_copy(char * s1, const char * s2) {
