@@ -55,6 +55,9 @@ char *Str_search(const char *s1, const char *s2) {
     int index = 0;
     int offset;
     assert(s1 != NULL && s2 != NULL);
+    if (s2[0] == '\0') {
+    	return &s1[0];
+    }
     while (s1[index] != '\0') {
         while (s1[index] != s2[0] && s1[index] != '\0') {
             index++;
@@ -66,9 +69,9 @@ char *Str_search(const char *s1, const char *s2) {
         if (s2[offset] == '\0') 
             return &s1[index];
         else if (s1[index + offset] == '\0') 
-            return (char*)NULL;
+            return NULL;
         else 
             index++;
     }
-    return (char*)NULL;
+    return NULL;
 }
