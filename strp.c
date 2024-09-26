@@ -4,8 +4,8 @@
 #include <assert.h>
 
 size_t Str_getLength(const char *s) {
-    assert(s != NULL);
     const char *endp = s;
+    assert(s != NULL);
     while (*endp != '\0') {
         endp++;
     }
@@ -13,9 +13,9 @@ size_t Str_getLength(const char *s) {
 }
 
 char *Str_copy(char *s1, const char *s2) {
-    assert(s1 != NULL && s2 != NULL);
     char *s1p = s1;
     const char *s2p = s2;
+    assert(s1 != NULL && s2 != NULL);
     while (*s2p != '\0') {
         *s1p++ = *s2p++;
     }
@@ -24,9 +24,9 @@ char *Str_copy(char *s1, const char *s2) {
 }
 
 char *Str_concat(char * s1, const char *s2) {
-    assert(s1 != NULL && s2 != NULL);
     char *s1p = s1;
     const char *s2p = s2;
+    assert(s1 != NULL && s2 != NULL);
     while (*s1p != '\0') {
         s1p++;
     }
