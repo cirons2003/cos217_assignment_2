@@ -53,5 +53,30 @@ int Str_compare(const char *s1, const char *s2) {
 }
 
 char *Str_search(const char *s1, const char *s2) {
-    return strstr(s1, s2);
+    const char *scanp1;
+    const char *scanp2;
+    assert(s1 != NULL && s2 != NULL);
+    if (*s2 == '\0') {
+        return s1;
+    }
+    while (*s1 != '\0') {
+        while (*s1 != *s2 && *s1 != '\0' && *s2 != '\0') {
+            s1++;
+        }
+        scanp1 = s1; 
+        scanp2 = s2;
+        while (*scanp1 == *scanp2 && *scanp1 != '\0' && *scanp2 != '\0') {
+            scanp1++;
+            scanp2++;
+        }
+        if (*scanp2 == '\0') {
+            return s1;
+        } else if (*scanp1 == '\0') {
+            return NULL;
+        } else {
+            s1++; 
+        }
+    }
+    return NULL;
 }
+
