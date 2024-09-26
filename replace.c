@@ -23,9 +23,15 @@ static size_t replaceAndWrite(const char *pcLine,
    size_t skipLength = Str_getLength(pcFrom);
    const char * nextFrom;
    int fromCount = 0;
+   const char * toScanner;
    assert(pcLine != NULL && pcFrom != NULL && pcTo != NULL);
    if (*pcFrom == '\0') {
-      printf("%s", pcLine);
+	return 0;
+      	toScanner = pcTo;
+	while (*toScanner != '\0') {
+	   putchar(*toScanner++);
+	}
+	return 0;
    }
    while (*pcLine != '\0') {
       nextFrom = Str_search(pcLine, pcFrom);
