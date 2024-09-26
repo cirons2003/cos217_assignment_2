@@ -25,6 +25,7 @@ static size_t replaceAndWrite(const char *pcLine,
    int fromCount = 0;
    assert(pcLine != NULL && pcFrom != NULL && pcTo != NULL);
    if (*pcFrom == '\0') {
+	   printf("%s", pcLine);
 	   return 0;
    }
    while (*pcLine != '\0') {
