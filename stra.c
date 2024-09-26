@@ -53,21 +53,22 @@ int Str_compare(const char * s1, const char *s2) {
 
 char *Str_search(const char *s1, const char *s2) {
     int index = 0;
-    int jdex;
+    int offset;
     assert(s1 != NULL && s2 != NULL);
     while (s1[index] != '\0') {
         while (s1[index] != s2[0] && s1[index] != '\0') {
             index++;
         }
-        jdex = index;
-        while (s1[jdex] == s2[jdex] && s1[jdex] != '\0' && s2[jdex] != '\0') {
-            jdex++;
+        offset = 0;
+        while (s1[index + offset] == s2[offset] && s1[index + offset] != '\0' && s2[offset] != '\0') {
+            offset++;
         }
-        if (s2[jdex] == '\0') 
-            return &s1[index];
+        if (s2[offset] == '\0') 
+            return &s1[index +];
         else if (s1[jdex] == '\0') 
             return (char*)NULL;
         else 
             index++;
     }
+    return (char*)NULL;
 }
