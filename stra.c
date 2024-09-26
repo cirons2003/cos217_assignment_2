@@ -64,8 +64,8 @@ char *Str_search(const char *s1, const char *s2) {
             offset++;
         }
         if (s2[offset] == '\0') 
-            return &s1[index +];
-        else if (s1[jdex] == '\0') 
+            return &s1[index];
+        else if (s1[index + offset] == '\0') 
             return (char*)NULL;
         else 
             index++;
