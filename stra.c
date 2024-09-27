@@ -66,7 +66,7 @@ char *Str_search(const char *s1, const char *s2) {
     assert(s1 != NULL && s2 != NULL);
     /*Edge case for empty substring; return pointer to s1*/
     if (s2[0] == '\0') {
-    	return &s1[0];
+    	return (char*)&s1[0];
     }
     while (s1[index] != '\0') {
         /*Skip until you match the first character of s2*/
@@ -80,7 +80,7 @@ char *Str_search(const char *s1, const char *s2) {
         }
         /*If at the end of s2 after the scan, you found a match. Return pointer to start (index)*/
         if (s2[offset] == '\0') 
-            return &s1[index];
+            return (char*)&s1[index];
         /*If at the end of s1 after the scan (but not at end of s2) you ran out of space (no match found)*/
         else if (s1[index + offset] == '\0') 
             return NULL;
