@@ -43,8 +43,10 @@ char *Str_concat(char * s1, const char * s2) {
 int Str_compare(const char * s1, const char *s2) {
     int index = 0; 
     assert(s1 != NULL && s2 != NULL);
-    /*Find the first difference in the two strings (or end of a string)*/
-    while (s1[index] == s2[index] && s1[index] != '\0' && s2[index] != '\0') {
+    /*Find the first difference in the two strings 
+    (or end of a string)*/
+    while (s1[index] == s2[index] && s1[index] != '\0' \
+    && s2[index] != '\0') {
         index++;
     } 
     /*If no difference found, they are both equal*/
@@ -73,15 +75,18 @@ char *Str_search(const char *s1, const char *s2) {
         while (s1[index] != s2[0] && s1[index] != '\0') {
             index++;
         }
-        /*keep track of an offset as you scan to see if its a match*/
+        /*keep track of an offset as you scan to see if its a match*/  
         offset = 0;
-        while (s1[index + offset] == s2[offset] && s1[index + offset] != '\0' && s2[offset] != '\0') {
+        while (s1[index + offset] == s2[offset] \
+        && s1[index + offset] != '\0' && s2[offset] != '\0') {
             offset++;
         }
-        /*If at the end of s2 after the scan, you found a match. Return pointer to start (index)*/
+        /*If at the end of s2 after the scan, you found a match. 
+        Return pointer to start (index)*/
         if (s2[offset] == '\0') 
             return (char*)&s1[index];
-        /*If at the end of s1 after the scan (but not at end of s2) you ran out of space (no match found)*/
+        /*If at the end of s1 after the scan (but not at end of s2) 
+        you ran out of space (no match found)*/
         else if (s1[index + offset] == '\0') 
             return NULL;
         /*Move on and keep searching*/

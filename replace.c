@@ -15,7 +15,7 @@
    distinct occurrence of string pcFrom replaced with string pcTo,
    and return a count of how many replacements were made.  Make no
    assumptions about the maximum number of replacements or the
-   maximum number of characters in strings pcLine, pcFrom, or pcTo. */
+   maximum number of characters in strings pcLine, pcFrom, or pcTo.  */ 
 
 static size_t replaceAndWrite(const char *pcLine,
                               const char *pcFrom, const char *pcTo)

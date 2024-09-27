@@ -65,7 +65,8 @@ int Str_compare(const char *s1, const char *s2) {
 }
 
 char *Str_search(const char *s1, const char *s2) {
-    /*Two pointers to handle scan to check for a match (without losing place)*/
+    /*Two pointers to handle scan to check for a match 
+    (without losing place)*/
     const char *scanp1;
     const char *scanp2;
     assert(s1 != NULL && s2 != NULL);
@@ -82,14 +83,16 @@ char *Str_search(const char *s1, const char *s2) {
         scanp1 = s1; 
         scanp2 = s2;
         /*Scan for a match until inequality or end of string*/
-        while (*scanp1 == *scanp2 && *scanp1 != '\0' && *scanp2 != '\0') {
+        while (*scanp1 == *scanp2 && *scanp1 != '\0' \
+        && *scanp2 != '\0') {
             scanp1++;
             scanp2++;
         }
         /*Reached end of s2, meaning we found a match!*/
         if (*scanp2 == '\0') {
             return s1;
-        /*Reached end of s1 but didnt complete a match; no match found*/
+        /*Reached end of s1 but didnt complete a match;                
+        no match found*/
         } else if (*scanp1 == '\0') {
             return NULL;
         /*Move on and keep searching*/

@@ -47,7 +47,7 @@ int Str_compare(const char * s1, const char *s2);
 
 /*
 ** Accepts two string s1 and s2.
-** Returns a pointer to the first occurence of the string pointed to by 
+** Returns a pointer to the first occurence of the string pointed to by
 ** s2 within the string pointed to by s1. If no such occurence 
 ** is found, returns the NULL pointer. 
 ** Does not change either string
