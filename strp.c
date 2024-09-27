@@ -55,7 +55,7 @@ int Str_compare(const char *s1, const char *s2) {
     if (*s1 == '\0' && *s2 == '\0') {
         return 0;
     /*If s1 is shorter than s2, or if the first different character
-    /*of s1 is less than that of s2, then s1 is less than s2*/
+    of s1 is less than that of s2, then s1 is less than s2*/
     } else if (*s1 < *s2 || *s1 == '\0') {
         return -1;
     /*Else (str at)s2 > (str at)s1*/
@@ -72,7 +72,7 @@ char *Str_search(const char *s1, const char *s2) {
     assert(s1 != NULL && s2 != NULL);
     /*Edge case for empty substring; return pointer to s1*/
     if (*s2 == '\0') {
-        return s1;
+        return (char*)s1;
     }
     while (*s1 != '\0') {
         /*Scan until first character match*/
@@ -90,7 +90,7 @@ char *Str_search(const char *s1, const char *s2) {
         }
         /*Reached end of s2, meaning we found a match!*/
         if (*scanp2 == '\0') {
-            return s1;
+            return (char*)s1;
         /*Reached end of s1 but didnt complete a match;                
         no match found*/
         } else if (*scanp1 == '\0') {

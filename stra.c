@@ -53,7 +53,7 @@ int Str_compare(const char * s1, const char *s2) {
     if (s1[index] == '\0' && s2[index] == '\0') {
         return 0; 
     /*If s1 is shorter than s2, or if the first different character
-    /*of s1 is less than that of s2, then s1 is less than s2*/
+    of s1 is less than that of s2, then s1 is less than s2*/
     } else if (s1[index] < s2[index] || s1[index] == '\0') {
         return -1;
     /*Else (str at)s2 > (str at)s1*/
