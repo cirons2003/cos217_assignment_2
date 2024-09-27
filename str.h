@@ -1,10 +1,18 @@
+/*
+** This module replicates 5 functions from 
+** the C standard library. 
+** Author: Carson Irons
+*/
+
 #ifndef STR_H
 #define STR_H
 
 #include <stddef.h>
 
+
 /*
-** Accepts a string, returns the number of characters
+** Accepts a string s
+** Returns the number of characters
 ** in the string (excluding the null character). 
 ** Does not make any changes to the string.
 */
@@ -14,6 +22,7 @@ size_t Str_getLength(const char *s);
 ** Accepts two strings, s1 and s2.
 ** Copies the characters in the string pointed to by s2 to the 
 ** adress pointed to by s1. 
+** Returns a pointer to s1. 
 ** Does not change the string pointed to by s2.
 */
 char *Str_copy(char * s1, const char * s2);
@@ -22,7 +31,9 @@ char *Str_copy(char * s1, const char * s2);
 ** Takes in two strings, s1 and s2. 
 ** Appends the characters in the string pointed 
 ** to by s2, to the end of the string pointed to
-** by s1. Does not change the string pointed to by s2.
+** by s1. 
+** Returns a pointer to s1.
+** Does not change the string pointed to by s2.
 */
 char *Str_concat(char * s1, const char * s2);
 

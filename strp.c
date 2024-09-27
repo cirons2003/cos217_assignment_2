@@ -1,3 +1,9 @@
+/*
+** This is an implementation of the String module 
+** defined in str.h.
+** These implementations follow pointer notation.
+*/
+
 #include "str.h"
 #include <string.h>
 #include <stddef.h>
