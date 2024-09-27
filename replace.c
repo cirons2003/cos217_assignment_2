@@ -24,15 +24,21 @@ static size_t replaceAndWrite(const char *pcLine,
    const char * nextFrom;
    int fromCount = 0;
    assert(pcLine != NULL && pcFrom != NULL && pcTo != NULL);
+   /*Edge case for empty pcFrom string*/
    if (*pcFrom == '\0') {
 	   printf("%s", pcLine);
 	   return 0;
    }
    while (*pcLine != '\0') {
+      /*Get the pointer to the next occurence of pcFrom*/
       nextFrom = Str_search(pcLine, pcFrom);
+      /*print until you reach pcFrom or the null character*/
       while (*pcLine != '\0' && pcLine != nextFrom) {
          putchar(*pcLine++);
       }
+      /*Omit pcFrom (by skipping over the character)*/
+      /*Print pcTo (using printf)*/
+      /*If no more occurences of pcFrom, nextFrom == NULL != pcLine*/
       if (pcLine == nextFrom) {
          pcLine += skipLength;
          printf("%s", pcTo);
@@ -65,6 +71,7 @@ int main(int argc, char *argv[])
    char *pcTo;
    size_t uReplaceCount = 0;
 
+   /*Validate command line args*/
    if (argc != PROPER_ARG_COUNT)
    {
       fprintf(stderr, "usage: %s fromstring tostring\n", argv[0]);
@@ -74,7 +81,9 @@ int main(int argc, char *argv[])
    pcFrom = argv[1];
    pcTo = argv[2];
 
+   /*Read stdin line by line*/
    while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL) {
+      /*Replace and write the line, increment replaceCount as needed*/
       uReplaceCount += replaceAndWrite(acLine, pcFrom, pcTo);
    }
       
