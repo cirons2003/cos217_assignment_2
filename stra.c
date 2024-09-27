@@ -66,7 +66,7 @@ char *Str_search(const char *s1, const char *s2) {
     assert(s1 != NULL && s2 != NULL);
     /*Edge case for empty substring; return pointer to s1*/
     if (s2[0] == '\0') {
-    	return (char*)&s1[0];
+        return (char*)&s1[0];
     }
     while (s1[index] != '\0') {
         /*Skip until you match the first character of s2*/
