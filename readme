@@ -3,7 +3,7 @@ Assignment 2 readme File
 ------------------------------------------------------------------------
 What is your name?
 
-
+Carson Irons
 
 ------------------------------------------------------------------------
 What authorized sources of information did you use to complete the
@@ -12,7 +12,10 @@ in the "Policies" web page (also available on armlab in the file
 ~cos217/AuthorizedSourcesList ) to this section of the readme file,
 and edit it as appropriate.
 
-
+C Programming Book (mostly used this)
+Lecture Slides 
+Precept Handouts 
+Ed Discussion
 
 ------------------------------------------------------------------------
 What unauthorized sources of information did you use to complete the
@@ -26,7 +29,7 @@ interaction, may additionally require the interaction being reported
 to the Committee on Discipline. Write "None" if you used no
 unauthorized sources of information.
 
-
+None
 
 ------------------------------------------------------------------------
 In fulfillment of the requirement from section 2.4.3 of the Academic
@@ -36,12 +39,13 @@ enter your name in the space below the following affirmation:
 This paper represents my own work in accordance with University
 regulations.
 
-
+/s/ Carson Irons 
 
 ------------------------------------------------------------------------
 What is your assessment of the assignment? Was it helpful? Was it fun?
 
-
+Yes, a bit tedious at times, but it was helpful in that it showed 
+how to compose a module and compile multi file programs
 
 ------------------------------------------------------------------------
 (optional) What information can you provide about your submission that
@@ -56,7 +60,7 @@ disagreements with them? Copy the splint warnings here, and express your
 disagreement after each warning. If there are no warnings, then write
 "None."
 
-
+None 
 
 ------------------------------------------------------------------------
 What warnings does critTer generate on stra.c, and what are your
@@ -64,7 +68,7 @@ disagreements with them? Copy the critTer warnings here, and express
 your disagreement after each warning. If there are no warnings, then
 write "None."
 
-
+None 
 
 ------------------------------------------------------------------------
 What warnings does splint generate on strp.c, and what are your
@@ -72,7 +76,7 @@ disagreements with them? Copy the splint warnings here, and express your
 disagreement after each warning. If there are no warnings, then write
 "None."
 
-
+None
 
 ------------------------------------------------------------------------
 What warnings does critTer generate on strp.c, and what are your
@@ -81,14 +85,14 @@ your disagreement after each warning. If there are no warnings, then
 write "None."
 
 
-
+None 
 ------------------------------------------------------------------------
 What warnings does splint generate on replace.c, and what are your
 disagreements with them? Copy the splint warnings here, and express your
 disagreement after each warning. If there are no warnings, then write
 "None."
 
-
+None
 
 ------------------------------------------------------------------------
 What warnings does critTer generate on replace.c, and what are your
@@ -96,13 +100,33 @@ disagreements with them? Copy the critTer warnings here, and express
 your disagreement after each warning. If there are no warnings, then
 write "None."
 
-
+None
 
 ------------------------------------------------------------------------
 Is it possible for Str_copy or Str_concat to call assert to verify
 that the destination memory area specified by the caller is large
 enough? Explain.
 
+Based on my understanding of course material to this point and some 
+exploring of the C textbook, I don't think there is a way to assert
+whether the destination memory area is large enough. This is likely the
+reason why the book warns us to be intentional with our usage of these 
+functions since they are inherently unsafe. 
 
+A better alternative is to use the variations of many string functions 
+that have the n in the middle since those allow you to explicitly 
+bound the space that the function can use. Still on us to make sure we
+pass the correct value for n, but at least we need to think about it.
+
+The reason for this I believe, is that the only information passed into
+these functions is a pointer to the first character of the string. Any 
+checking of the space must be done in linear time by finding the null 
+character, and even if you traversed to the end of it, or past, there 
+is no way to actually check if a memory address is available or in use. 
+
+We could maybe use malloc, and realloc, but these would involve working 
+with heap memory rather than the stack or data segments and would 
+require that we change the location of the strings which violated the 
+handshake of the string module in many cases. 
 
 ------------------------------------------------------------------------
