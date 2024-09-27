@@ -45,7 +45,7 @@ static size_t replaceAndWrite(const char *pcLine,
          fromCount++;
       }
    }
-   return fromCount;
+   return (size_t)fromCount;
 }
 
 /*--------------------------------------------------------------------*/
